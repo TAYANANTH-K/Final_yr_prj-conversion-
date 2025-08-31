@@ -1,0 +1,289 @@
+/* Navigation Styles */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+}
+
+.navigation {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.main-content {
+  flex: 1;
+  padding: 0;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Global container with gradient bg used on all pages */
+.app-container, .page {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Welcome / Module page shared bits */
+.welcome-screen, .module-screen {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.welcome-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.welcome-screen p {
+  font-size: 1.2rem;
+  animation: blink 1.5s infinite;
+}
+
+.module-screen h1 {
+  margin-bottom: 18px;
+  font-size: 2rem;
+}
+.modules {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.module-card {
+  background: white;
+  color: black;
+  padding: 24px;
+  border-radius: 16px;
+  width: 260px;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-align: center;
+}
+.module-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.module-card h2 { margin: 10px 0 6px; font-size: 1.25rem; }
+.module-card p { font-size: 0.95rem; color: #444; }
+.module-icon { font-size: 44px; color: #4e54c8; }
+
+/* Text->Sign page layout */
+.page {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 18px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* LEFT pane */
+.leftPane {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 16px;
+  padding: 18px;
+}
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.panelHeader.small { font-size: 1rem; opacity: 0.95; }
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.row label { width: 100px; }
+select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.textArea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: none;
+  padding: 12px;
+  resize: vertical;
+  min-height: 140px;
+  font-size: 0.98rem;
+  color: #111;
+}
+
+.buttons { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+.btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn.primary { background: #ffffff; color: #222; }
+.btn.success { background: #2ecc71; color: white; }
+.btn.danger  { background: #e74c3c; color: white; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.error-message {
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 8px 0;
+  border-left: 3px solid #e74c3c;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.convertedBox {
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  padding: 12px;
+}
+.convertedText {
+  background: white;
+  color: #111;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 8px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.animControls { margin-top: 14px; }
+.animControls input[type="range"] { width: 260px; }
+
+/* RIGHT pane: animation viewer */
+.rightPane {
+  display: grid;
+  place-items: center;
+}
+.viewer {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.viewerHeader {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.viewerStage {
+  height: 320px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.25), transparent 55%),
+              radial-gradient(circle at 70% 70%, rgba(255,255,255,0.15), transparent 60%);
+  border-radius: 14px;
+  border: 1px dashed rgba(255,255,255,0.45);
+  margin-bottom: 10px;
+}
+.frame {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  animation: pop 0.35s ease;
+}
+.frame.letter {
+  font-size: 96px;
+}
+.viewerMeta {
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes blink { 0%{opacity:1} 50%{opacity:.4} 100%{opacity:1} }
+@keyframes pop { from{transform:scale(.9); opacity:.4} to{transform:scale(1); opacity:1} }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page { grid-template-columns: 1fr; }
+  .rightPane { order: -1; margin-bottom: 16px; }
+}
